@@ -1,15 +1,13 @@
-import Navbar from "./navbar/Navbar"
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import Link from "next/link";
+import HeroSection from "./hero/HeroSection";
 
-export default function RootLayout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
-    return (
-      <>
-        <Navbar />
-        {children}
-      </>
-    );
-  }
-  
+function LandingPage() {
+  return (
+   <>
+   <HeroSection/>
+   </>
+  );
+}
+
+export default LandingPage;
