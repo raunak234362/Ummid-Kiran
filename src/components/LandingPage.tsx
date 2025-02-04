@@ -1,3 +1,5 @@
+import Navbar from "./navbar/Navbar"
+
 export default function RootLayout({
     children,
   }: Readonly<{
@@ -5,7 +7,7 @@ export default function RootLayout({
   }>) {
     return (
       <>
-        <div>Inner Layout item</div>
+        <Navbar />
         {children}
       </>
     );
