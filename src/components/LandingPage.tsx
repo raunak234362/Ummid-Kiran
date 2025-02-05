@@ -7,6 +7,8 @@ import Vision from "./vision/Vision";
 import Mission from "./mission/Mission";
 import Service from "./service/Service";
 import Founder from "./founder/Founder";
+import Contact from "./contact/Contact";
+import Footer from "./footer/Footer";
 function LandingPage() {
   return (
     <>
@@ -17,6 +19,8 @@ function LandingPage() {
       <Mission />
       <Service />
       <Founder/>
+      <Contact />
+      <Footer />
     </>
   );
 }
