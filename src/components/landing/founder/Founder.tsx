@@ -1,4 +1,5 @@
 import { Instagram, Phone, LinkIcon } from "lucide-react";
+import Link from "next/link";
 
 function Founder() {
   return (
@@ -19,14 +20,14 @@ function Founder() {
               Archana Srivastava
             </h3>
             <p className="text-gray-600 mb-4">Founder, Umeed Kiran</p>
-            <a
+            <Link
               href="https://instagram.com"
               className="text-blue-600 hover:text-blue-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
 
           {/* Information Sections */}

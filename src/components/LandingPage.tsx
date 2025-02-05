@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import Link from "next/link";
-import HeroSection from "./hero/HeroSection";
-import Navbar from "./navbar/Navbar";
-import About from "./about/About";
+
+import HeroSection from "./landing/hero/HeroSection";
+import Navbar from "./landing/navbar/Navbar";
+import About from "./landing/about/About";
 import Vision from "./vision/Vision";
-import Mission from "./mission/Mission";
-import Service from "./service/Service";
-import Founder from "./founder/Founder";
-import Contact from "./contact/Contact";
-import Footer from "./footer/Footer";
+import Mission from "./landing/mission/Mission";
+import Service from "./landing/service/Service";
+import Founder from "./landing/founder/Founder";
+import Contact from "./landing/contact/Contact";
+import Footer from "./landing/footer/Footer";
 function LandingPage() {
   return (
     <>
