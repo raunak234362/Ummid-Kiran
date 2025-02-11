@@ -20,12 +20,12 @@ function Navbar({ className }: { className?: string }) {
           </li>
           <li>
             <Link href="/blog" className="hover:underline">
-              About
+              Blog
             </Link>
           </li>
           <li>
-            <Link href="/blog" className="hover:underline">
-              Blog
+            <Link href="/about" className="hover:underline">
+              About
             </Link>
           </li>
         </ul>

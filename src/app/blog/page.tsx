@@ -3,7 +3,7 @@
 function page() {
   return (
     <div>
-      
+      Hey Blog
     </div>
   )
 }
