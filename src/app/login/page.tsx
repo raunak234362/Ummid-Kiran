@@ -30,7 +30,7 @@ function Page() {
   const login = async (data: { email: string; password: string }) => {
     console.log(data);
     try {
-      await account.createEmailSession(data.email, data.password);
+      await account.createEmailPasswordSession(data.email, data.password);
       alert("Login successful!");
       router.push("/admin");
     } catch (err) {
