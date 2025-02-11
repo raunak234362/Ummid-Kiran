@@ -27,7 +27,7 @@ function Page() {
     checkUserSession();
   }, [router]);
 
-  const login = async (data: { email: string; password: string }) => {
+  const login = async (data) => {
     console.log(data);
     try {
       await account.createEmailPasswordSession(data.email, data.password);
