@@ -3,12 +3,16 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-
+import { account, ID } from "../appwrite";
+import { redirect } from "next/navigation";
 
 function page() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const handleLogin = async () => {
+    const login = async (data) => {
+      console.log(data)
         try {
+          const session = await account.createEmailPasswordSession(data.email, data.password);
+          redirect("/admin");
           alert("Login successful!");
         } catch (err) {
           console.log(err);
@@ -22,7 +26,7 @@ function page() {
       <div className="w-full flex h-full justify-center items-center">
         <div className="bg-white p-4 rounded-lg shadow-lg w-5/12">
           <h2 className="text-center font-bold my-5 text-2xl">Login</h2>
-          <form onSubmit={handleSubmit(handleLogin)} className="space-y-4">
+          <form onSubmit={handleSubmit(login)} className="space-y-4">
             <div>
               <label>Email:</label>
               <input

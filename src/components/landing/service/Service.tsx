@@ -1,7 +1,14 @@
 import { Smile, MessageSquare, Briefcase, User, Music } from 'lucide-react'
 
 
-function ServiceCard({ icon, title, description, iconBgColor }) {
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  iconBgColor: string;
+}
+
+function ServiceCard({ icon, title, description, iconBgColor }: ServiceCardProps) {
     return (
       <div className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-center text-center">
         <div className={`${iconBgColor} w-16 h-16 rounded-full flex items-center justify-center mb-4`}>
