@@ -7,7 +7,7 @@ import Service from "./landing/service/Service";
 import Founder from "./landing/founder/Founder";
 import Contact from "./landing/contact/Contact";
 import Footer from "./landing/footer/Footer";
-import Page from "@/app/login/page";
+
 function LandingPage() {
   return (
     <>
@@ -20,7 +20,6 @@ function LandingPage() {
       <Founder />
       <Contact />
       <Footer />
-      <Page />
     </>
   );
 }
