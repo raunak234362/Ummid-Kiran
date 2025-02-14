@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -10,7 +8,7 @@ import { account } from "../appwrite";
 function Page() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<{ email: string; password: string }>();
 
   // Check if user is already logged in
   useEffect(() => {
@@ -27,7 +25,7 @@ function Page() {
     checkUserSession();
   }, [router]);
 
-  const login = async (data) => {
+  const login = async (data: { email: string; password: string }) => {
     console.log(data);
     try {
       await account.createEmailPasswordSession(data.email, data.password);
@@ -53,7 +51,7 @@ function Page() {
               className="w-full border border-gray-300 p-2 rounded-lg"
               {...register("email", { required: "Email is required" })}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            {errors.email?.message && <p className="text-red-500 text-sm">{String(errors.email.message)}</p>}
           </div>
 
           <div>
@@ -63,7 +61,7 @@ function Page() {
               className="w-full border border-gray-300 p-2 rounded-lg"
               {...register("password", { required: "Password is required" })}
             />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+            {errors.password && <p className="text-red-500 text-sm">{String(errors.password.message)}</p>}
           </div>
 
           <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-lg">

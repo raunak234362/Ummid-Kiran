@@ -9,7 +9,7 @@ const images = Array.from(
 );
 
 export default function Gallery() {
-  const [loadedImages, setLoadedImages] = useState(images);
+  const [loadedImages] = useState(images);
 
   useEffect(() => {
     const scrollContainer = document.getElementById("scrollContainer");
@@ -19,7 +19,10 @@ export default function Gallery() {
     const scrollSpeed = 1; // Adjust speed (lower is slower)
 
     const scrollDown = () => {
-      if (scrollAmount < scrollContainer.scrollHeight - scrollContainer.clientHeight) {
+      if (
+        scrollAmount <
+        scrollContainer.scrollHeight - scrollContainer.clientHeight
+      ) {
         scrollAmount += scrollSpeed;
         scrollContainer.scrollTo({ top: scrollAmount, behavior: "smooth" });
       } else {
@@ -35,7 +38,9 @@ export default function Gallery() {
   return (
     <div className="min-h-screen p-10 bg-gray-100 flex justify-center">
       <div className="w-full max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Gallery</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+          Gallery
+        </h1>
 
         {/* Scrollable Image Grid with Auto-Scroll */}
         <div
@@ -44,7 +49,10 @@ export default function Gallery() {
         >
           <div className="grid grid-cols-3 gap-4 p-4">
             {loadedImages.map((src, index) => (
-              <div key={index} className="w-full h-64 overflow-hidden rounded-lg shadow-md">
+              <div
+                key={index}
+                className="w-full h-64 overflow-hidden rounded-lg shadow-md"
+              >
                 <img
                   src={src}
                   alt={`Image ${index + 1}`}
