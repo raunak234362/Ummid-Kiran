@@ -24,7 +24,7 @@ function Page() {
     const checkUserSession = async (): Promise<void> => {
       try {
         await account.get();
-        // router.push("/admin"); // Redirect if already logged in
+        router.push("/admin"); // Redirect if already logged in
       } catch (err) {
         console.log("No active session found", err);
       } finally {
