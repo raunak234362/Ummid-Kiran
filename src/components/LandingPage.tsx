@@ -1,4 +1,3 @@
-
 import HeroSection from "./landing/hero/HeroSection";
 import Navbar from "./landing/navbar/Navbar";
 import About from "./landing/about/About";
@@ -8,6 +7,7 @@ import Service from "./landing/service/Service";
 import Founder from "./landing/founder/Founder";
 import Contact from "./landing/contact/Contact";
 import Footer from "./landing/footer/Footer";
+
 function LandingPage() {
   return (
     <>
@@ -17,7 +17,7 @@ function LandingPage() {
       <Vision />
       <Mission />
       <Service />
-      <Founder/>
+      <Founder />
       <Contact />
       <Footer />
     </>
