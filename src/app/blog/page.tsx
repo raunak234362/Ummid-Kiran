@@ -1,9 +1,13 @@
+"use client";
+
 function page() {
-  return (
-    <div>
-      Hey Blog
-    </div>
-  )
+  const fetchData = async () => {
+    const res = await fetch("http://localhost:3000/api/blogs");
+    const data = await res.json();
+    console.log(data);
+  };
+  fetchData();
+  return <div>Hey Blog</div>;
 }
 
-export default page
+export default page;
