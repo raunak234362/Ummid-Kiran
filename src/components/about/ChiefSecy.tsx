@@ -1,4 +1,4 @@
-import { Instagram, Phone, LinkIcon } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -44,7 +44,7 @@ function ChiefSecy() {
               <Instagram className="w-6 h-6" />
             </Link>
             <div className="mt-4 text-gray-600 text-start">
-              <p className="my-2">• Husband's Name: Group Captain Rosha</p>
+              <p className="my-2">• Husband&apos;s Name: Group Captain Rosha</p>
               <p className="mb-2">• Education: MA, MPhil</p>
             </div>
           </div>

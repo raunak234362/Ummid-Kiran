@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 // Assuming you have 79 images and their names follow a pattern
@@ -7,12 +8,18 @@ const imageCount = 78;
 const images = Array.from(
   { length: imageCount + 1 }, // Increase length to account for the skipped image
   (_, i) =>
-    i === 8 ? null : `/gallery/IMG-20250212-WA${String(i).padStart(4, "0")}.jpg`
-).filter(Boolean); // Filter out the null value
+    i === 8 ? "" : `/gallery/IMG-20250212-WA${String(i).padStart(4, "0")}.jpg`
+).filter((src) => src !== ""); // Filter out the empty string
 
 const Gallery = () => {
-  const [galleryImages, setGalleryImages] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [galleryImages, setGalleryImages] = useState<
+    { id: number; alt: string; src: string }[]
+  >([]);
+  const [selectedImage, setSelectedImage] = useState<{
+    id: number;
+    alt: string;
+    src: string;
+  } | null>(null);
 
   console.log(images);
 
@@ -27,7 +34,7 @@ const Gallery = () => {
     console.log(galleryImages);
   }, []);
 
-  const openLightbox = (img) => {
+  const openLightbox = (img: { id: number; alt: string; src: string }) => {
     setSelectedImage(img);
   };
 
@@ -47,9 +54,11 @@ const Gallery = () => {
             className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
             onClick={() => openLightbox(image)}
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
+              width={300}
+              height={300}
               className="w-full h-60 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
