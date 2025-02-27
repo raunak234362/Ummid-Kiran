@@ -1,5 +1,9 @@
 import { Instagram, Phone, LinkIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+
+const imageUrl =
+  "https://cloud.appwrite.io/v1/storage/buckets/67b32324003c26622b3f/files/67c03fad002a60944a48/view?project=67b32231001f01be8e49&mode=admin";
 
 function Founder() {
   return (
@@ -13,9 +17,15 @@ function Founder() {
         <div className="grid md:grid-cols-[400px_1fr] gap-8">
           {/* Founder Card */}
           <div className="bg-blue-50 rounded-lg p-8 flex flex-col items-center text-center">
-            <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-              <span className="text-4xl font-bold text-white">AS</span>
-            </div>
+            {/* <div className=" bg-blue-600 rounded-full flex items-center justify-center mb-4"> */}
+            <Image
+              src={imageUrl}
+              alt="Archana Srivastava"
+              width={128}
+              height={128}
+              className="rounded-full"
+            />
+            {/* </div> */}
             <h3 className="text-2xl font-bold text-blue-600 mb-2">
               Archana Srivastava
             </h3>
@@ -28,6 +38,19 @@ function Founder() {
             >
               <Instagram className="w-6 h-6" />
             </Link>
+            <div className="mt-4 text-gray-600 text-start">
+              <p className="my-2">
+                • Founder Director of Ummid Kiran Special School and
+                Rehabilitation Centre
+              </p>
+              <p className="mb-2">
+                • Member of Mental Health Review Board, Barabanki
+              </p>
+              <p className="mb-2">
+                • President of Internal Complaint Committee, Mahrshi School
+                Barabanki
+              </p>
+            </div>
           </div>
 
           {/* Information Sections */}
