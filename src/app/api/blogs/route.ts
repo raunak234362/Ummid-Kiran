@@ -6,9 +6,13 @@ const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string;
 const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID as string;
 const BUCKET_ID = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID as string; // ✅ Add Bucket ID
 
+
+
 const storage = new Storage(client); // ✅ Initialize Storage
 
 export async function GET(req: NextRequest) {
+console.log(DATABASE_ID, COLLECTION_ID, BUCKET_ID);
+
   try {
     // Get query parameters for pagination
     const { searchParams } = new URL(req.url);
