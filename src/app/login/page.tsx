@@ -1,20 +1,27 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { account } from "../appwrite";
 
+interface LoginFormInputs {
+  email: string;
+  password: string;
+}
+
 function Page() {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [loading, setLoading] = useState<boolean>(true);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormInputs>();
 
   // Check if user is already logged in
   useEffect(() => {
-    const checkUserSession = async () => {
+    const checkUserSession = async (): Promise<void> => {
       try {
         await account.get();
         router.push("/admin"); // Redirect if already logged in
@@ -27,19 +34,29 @@ function Page() {
     checkUserSession();
   }, [router]);
 
-  const login = async (data) => {
+  const login: SubmitHandler<LoginFormInputs> = async (data) => {
     console.log(data);
     try {
       await account.createEmailPasswordSession(data.email, data.password);
       alert("Login successful!");
       router.push("/admin");
-    } catch (err) {
+      //eslint-disable-next-line
+    } catch (err: any) {
       console.error("Login failed:", err);
-      alert("Login failed. Please check your credentials.");
+      if (err.response && err.response.message) {
+        alert(`Login failed: ${err.response.message}`);
+      } else {
+        alert("Login failed. Please check your credentials.");
+      }
     }
   };
 
-  if (loading) return <div className="h-screen flex justify-center items-center text-white">Loading...</div>;
+  if (loading)
+    return (
+      <div className="h-screen flex justify-center items-center text-white">
+        Loading...
+      </div>
+    );
 
   return (
     <div className="h-screen bg-gradient-to-b from-blue-gray-600 to-blue-600 flex justify-center items-center p-4">
@@ -53,7 +70,11 @@ function Page() {
               className="w-full border border-gray-300 p-2 rounded-lg"
               {...register("email", { required: "Email is required" })}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            {errors.email?.message && (
+              <p className="text-red-500 text-sm">
+                {String(errors.email.message)}
+              </p>
+            )}
           </div>
 
           <div>
@@ -63,10 +84,17 @@ function Page() {
               className="w-full border border-gray-300 p-2 rounded-lg"
               {...register("password", { required: "Password is required" })}
             />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm">
+                {String(errors.password.message)}
+              </p>
+            )}
           </div>
 
-          <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-lg">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white p-2 rounded-lg"
+          >
             Login
           </button>
         </form>
