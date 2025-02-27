@@ -2,71 +2,88 @@
 import React, { useEffect, useState } from "react";
 
 // Assuming you have 79 images and their names follow a pattern
-const imageCount = 79;
-const images = Array.from(
-  { length: imageCount },
-  (_, i) => `/gallery/IMG-20250212-WA${String(i).padStart(4, "0")}.jpg`
-);
+const imageCount = 78;
 
-export default function Gallery() {
-  const [loadedImages] = useState(images);
+const images = Array.from(
+  { length: imageCount + 1 }, // Increase length to account for the skipped image
+  (_, i) =>
+    i === 8 ? null : `/gallery/IMG-20250212-WA${String(i).padStart(4, "0")}.jpg`
+).filter(Boolean); // Filter out the null value
+
+const Gallery = () => {
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  console.log(images);
 
   useEffect(() => {
-    const scrollContainer = document.getElementById("scrollContainer");
-    if (!scrollContainer) return;
+    const galleryData = images.map((src, index) => ({
+      id: index + 1,
+      alt: `Image ${index + 1}`,
+      src: src,
+    }));
 
-    let scrollAmount = 0;
-    const scrollSpeed = 1; // Adjust speed (lower is slower)
-
-    const scrollDown = () => {
-      if (
-        scrollAmount <
-        scrollContainer.scrollHeight - scrollContainer.clientHeight
-      ) {
-        scrollAmount += scrollSpeed;
-        scrollContainer.scrollTo({ top: scrollAmount, behavior: "smooth" });
-      } else {
-        scrollAmount = 0; // Reset to start once scrolled down completely
-      }
-    };
-
-    const interval = setInterval(scrollDown, 50); // Adjust speed interval
-
-    return () => clearInterval(interval);
+    setGalleryImages(galleryData);
+    console.log(galleryImages);
   }, []);
 
-  return (
-    <div className="min-h-screen p-10 bg-gray-100 flex justify-center">
-      <div className="w-full max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-          Gallery
-        </h1>
+  const openLightbox = (img) => {
+    setSelectedImage(img);
+  };
 
-        {/* Scrollable Image Grid with Auto-Scroll */}
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  return (
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
+        Image Gallery
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {galleryImages.map((image) => (
+          <div
+            key={image.id}
+            className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer"
+            onClick={() => openLightbox(image)}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-60 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      {selectedImage && (
         <div
-          id="scrollContainer"
-          className="overflow-auto h-[80vh] rounded-lg shadow-lg scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={closeLightbox}
         >
-          <div className="grid grid-cols-3 gap-4 p-4">
-            {loadedImages.map((src, index) => (
-              <div
-                key={index}
-                className="w-full h-64 overflow-hidden rounded-lg shadow-md"
-              >
-                <img
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="w-full h-full object-cover rounded-md transition-transform hover:scale-105"
-                  onError={(e) => {
-                    console.error("Image not found:", src);
-                    e.currentTarget.style.display = "none"; // Hide broken images
-                  }}
-                />
-              </div>
-            ))}
+          <div
+            className="max-w-3xl w-full p-4 bg-white rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="w-full h-auto object-contain max-h-[80vh]"
+            />
+            <p className="mt-2 text-center text-gray-600">
+              {selectedImage.alt}
+            </p>
+            <button
+              className="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition duration-300 w-full"
+              onClick={closeLightbox}
+            >
+              Close
+            </button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
-}
+};
+
+export default Gallery;
