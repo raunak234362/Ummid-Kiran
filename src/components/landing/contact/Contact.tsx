@@ -5,15 +5,36 @@ import { Phone, Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button"
 
 function Contact() {
+    interface ContactData {
+         name: string;
+         email: string;
+         contactNumber: string;
+         message: string;
+    }
+
     const {
         register,
         handleSubmit,
         formState: { errors },
-      } = useForm();
-    
-      const onSubmit = async () => {
-        console.log();
+      } = useForm<ContactData>();
+      
+      const onSubmit = async (data: ContactData): Promise<void> => {
+        try {
+          const { name, email, contactNumber, message } = data;
+          const res = await fetch("/api/mail/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({name, email, phone:contactNumber, message}),
+          });
+          const json = await res.json();
+          console.log(json);
+        } catch (error) {
+          console.error("Error submitting form:", error);
+        }
       };
+      
     
       return (
         <section className="py-16 px-4 bg-gradient-to-b from-blue-200 to-blue-50">
