@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const imageUrl =
-  "https://cloud.appwrite.io/v1/storage/buckets/67b32324003c26622b3f/files/67c04826003d2bcd0c26/view?project=67b32231001f01be8e49&mode=admin";
+  "https://cloud.appwrite.io/v1/storage/buckets/67b32324003c26622b3f/files/67c88fc6003c7675b558/view?project=67b32231001f01be8e49&mode=admin";
 
 function ChiefSecy() {
   return (
@@ -11,7 +11,7 @@ function ChiefSecy() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-600 mb-2">
-            Chief Secretary
+            Member of Committee
           </h2>
           <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
         </div>
@@ -22,20 +22,20 @@ function ChiefSecy() {
             {/* <div className=" bg-blue-600 rounded-full flex items-center justify-center mb-4"> */}
             <Image
               src={imageUrl}
-              alt="Rinkoo Srivastava"
+              alt="Ashish Srivastava"
               width={128}
               height={128}
               className="rounded-full"
             />
             {/* </div> */}
             <h3 className="text-2xl font-bold text-blue-600 mb-2">
-              Rinkoo Srivastava
+              Ashish Srivastava
             </h3>
             <p className="text-gray-600 mb-4">
-              Chief Secretary, Umeed Kiran Jan Kalyan Samiti
+              Member of Core Committee, Umeed Kiran Jan Kalyan Samiti
             </p>
 
-            <Link
+            {/* <Link
               href="https://instagram.com"
               className="text-blue-600 hover:text-blue-700 transition-colors"
               target="_blank"
@@ -46,7 +46,7 @@ function ChiefSecy() {
             <div className="mt-4 text-gray-600 text-start">
               <p className="my-2">• Husband&apos;s Name: Group Captain Rosha</p>
               <p className="mb-2">• Education: MA, MPhil</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
