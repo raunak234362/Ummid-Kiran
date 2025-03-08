@@ -6,6 +6,7 @@ function About() {
     "Play Therapy",
     "Postural Therapy",
     "Art & Music Therapy",
+    "Special Education",
   ];
 
   const additionalPrograms = [
