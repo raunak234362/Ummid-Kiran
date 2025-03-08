@@ -40,14 +40,14 @@ function Founder() {
             </Link>
             <div className="mt-4 text-gray-600 text-start">
               <p className="my-2">
-                • Founder Director of Ummid Kiran Special School and
+                • Founder Director of Umeed Kiran Special School and
                 Rehabilitation Centre
               </p>
               <p className="mb-2">
                 • Member of Mental Health Review Board, Barabanki
               </p>
               <p className="mb-2">
-                • President of Internal Complaint Committee, Mahrshi School
+                • President of Internal Complaint Committee, Maharishi School
                 Barabanki
               </p>
             </div>
@@ -75,7 +75,7 @@ function Founder() {
               <ul className="space-y-2 text-gray-600">
                 <li>• Established Umeed Kiran Jan Kalyaan Samiti</li>
                 <li>• Society Registration 1705/14-15</li>
-                <li>• Registered under PWD act,5745/2022-23 12A and 80G</li>
+                <li>• Registered under PWD act, 5745/2022-23, 12A and 80G</li>
                 <li>• Created comprehensive rehabilitation programs</li>
                 <li>• Developed innovative therapy solutions</li>
               </ul>

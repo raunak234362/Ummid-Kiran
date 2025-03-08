@@ -9,13 +9,13 @@ function ChiefSecy() {
     <section className="py-16 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-600 mb-2">Secretary</h2>
+          <h2 className="text-3xl font-bold text-blue-600 mb-2">Secretary</h2>
           <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
         <div>
           {/* Founder Card */}
-          <div className="bg-blue-50 rounded-lg p-8 flex flex-col items-center text-center mx-auto w-96">
+          <div className="bg-blue-50 rounded-lg p-8 flex flex-col items-center text-center mx-auto w-64">
             {/* <div className=" bg-blue-600 rounded-full flex items-center justify-center mb-4"> */}
             <Image
               src={imageUrl}

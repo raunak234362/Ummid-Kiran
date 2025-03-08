@@ -15,7 +15,7 @@ function page() {
         <ChiefSecy />
         <Secy />
         </div> */}
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+       <div className="grid md:grid-cols-4 max-sm:grid-cols-1 gap-2">
         <ChiefSecy />
         <Secy />
         <MemberOne />

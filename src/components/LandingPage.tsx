@@ -10,13 +10,15 @@ import Mission from "./landing/mission/Mission"
 import Service from "./landing/service/Service"
 import Founder from "./landing/founder/Founder"
 import Contact from "./landing/contact/Contact"
+import { Button } from "./ui/button"
+import CoreTeam from "./landing/team/CoreTeam"
 
 const LandingPage = () => {
   const router = useRouter()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const [isDashboardExpanded, setIsDashboardExpanded] = useState(false)
+  // const [isDashboardExpanded, setIsDashboardExpanded] = useState(false)
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section)
@@ -28,12 +30,12 @@ const LandingPage = () => {
       {/* User Dropdown */}
       <div className="fixed top-4 right-4 z-50">
         <div className="relative">
-          <button
+          <Button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="p-2 rounded-full bg-sky-800 text-white hover:bg-sky-700 transition-colors"
           >
             <FiUser size={24} />
-          </button>
+          </Button>
 
           {/* Dropdown Menu */}
           {isDropdownOpen && (
@@ -61,6 +63,7 @@ const LandingPage = () => {
         <Mission />
         <Service />
         <Founder />
+        <CoreTeam/>
         <Contact />
       </main>
     </div>
