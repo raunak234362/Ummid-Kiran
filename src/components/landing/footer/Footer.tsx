@@ -91,7 +91,7 @@ function Footer() {
               className="flex items-center text-gray-300 hover:text-yellow-400 transition-colors"
             >
               <Phone className="w-5 h-5 mr-2" />
-              +91 73982 82238
+              +91 93057 03345
             </a>
             <a
               href="#"

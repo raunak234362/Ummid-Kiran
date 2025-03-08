@@ -74,7 +74,8 @@ function Founder() {
               </h4>
               <ul className="space-y-2 text-gray-600">
                 <li>• Established Umeed Kiran Jan Kalyaan Samiti</li>
-                <li>• Registered under PWD act, 12A and 80G</li>
+                <li>• Society Registration 1705/14-15</li>
+                <li>• Registered under PWD act,5745/2022-23 12A and 80G</li>
                 <li>• Created comprehensive rehabilitation programs</li>
                 <li>• Developed innovative therapy solutions</li>
               </ul>
@@ -91,7 +92,7 @@ function Founder() {
                   className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  +91 73982 82238
+                  +91 93057 03345
                 </a>
                 <a
                   href="#"

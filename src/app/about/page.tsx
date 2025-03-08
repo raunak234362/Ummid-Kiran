@@ -8,15 +8,15 @@ import MemberTwo from "@/components/about/MemberTwo";
 
 function page() {
   return (
-    <div>
+    <div className="w-full mx-auto">
       <About />
       <Founder />
-      <ChiefSecy />
       {/* <div className="flex justify-evenly">
         <ChiefSecy />
         <Secy />
-      </div> */}
-      <div className="flex justify-evenly">
+        </div> */}
+      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-2">
+        <ChiefSecy />
         <Secy />
         <MemberOne />
         <MemberTwo />

@@ -85,7 +85,7 @@ function Contact() {
                           href="tel:+917398282238"
                           className="text-gray-600 hover:text-blue-600 transition-colors"
                         >
-                          +91 73982 82238
+                          +91 93057 03345
                         </a>
                       </div>
                     </div>

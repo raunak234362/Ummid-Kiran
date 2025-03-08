@@ -1,5 +1,4 @@
-import { Instagram } from "lucide-react";
-import Link from "next/link";
+
 import Image from "next/image";
 
 const imageUrl =
@@ -8,7 +7,7 @@ const imageUrl =
 function ChiefSecy() {
   return (
     <section className="py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-600 mb-2">
             Chief Secretary
@@ -35,18 +34,7 @@ function ChiefSecy() {
               Chief Secretary, Umeed Kiran Jan Kalyan Samiti
             </p>
 
-            <Link
-              href="https://instagram.com"
-              className="text-blue-600 hover:text-blue-700 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Instagram className="w-6 h-6" />
-            </Link>
-            <div className="mt-4 text-gray-600 text-start">
-              <p className="my-2">• Husband&apos;s Name: Group Captain Rosha</p>
-              <p className="mb-2">• Education: MA, MPhil</p>
-            </div>
+           
           </div>
         </div>
       </div>
