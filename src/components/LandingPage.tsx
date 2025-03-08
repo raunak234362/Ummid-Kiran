@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { FiUser, FiMonitor, FiLogOut } from "react-icons/fi"
+import { FiUser, FiMonitor } from "react-icons/fi"
 import HeroSection from "./landing/hero/HeroSection"
 import About from "./landing/about/About"
 import Vision from "./landing/vision/Vision"
@@ -16,14 +16,7 @@ import CoreTeam from "./landing/team/CoreTeam"
 const LandingPage = () => {
   const router = useRouter()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
   // const [isDashboardExpanded, setIsDashboardExpanded] = useState(false)
-
-  const handleSectionChange = (section: string) => {
-    setActiveSection(section)
-    setIsSidebarOpen(false)
-  }
 
   return (
     <div className="relative">

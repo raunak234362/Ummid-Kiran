@@ -74,7 +74,7 @@ const Gallery = () => {
             className="max-w-3xl w-full p-4 bg-white rounded-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={selectedImage.src}
               alt={selectedImage.alt}
               className="w-full h-auto object-contain max-h-[80vh]"

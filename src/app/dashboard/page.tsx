@@ -1,13 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { FiHome, FiMonitor, FiLogOut, FiPlusCircle, FiImage } from "react-icons/fi"
+import { FiPlusCircle, FiImage } from "react-icons/fi"
 import AddBlogForm from "@/components/dashboard/AddBlogForm"
 import AddImageToGallery from "@/components/dashboard/AddImageToGallery"
 
 export default function DashboardPage() {
-  const router = useRouter()
+
   const [activeSection, setActiveSection] = useState<"welcome" | "blog" | "image">("welcome")
 
   return (
