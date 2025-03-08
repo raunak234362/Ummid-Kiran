@@ -1,8 +1,8 @@
 "use client"; // Ensure this is at the top
 
 import { useState } from "react";
-import AddBlogForm from "./AddBlogForm";
-import AddImageToGallery from "./AddImageToGallery";
+// import AddBlogForm from "./AddBlogForm";
+// import AddImageToGallery from "./AddImageToGallery";
 
 const Dashboard: React.FC = () => {
   const [activeSection, setActiveSection] = useState<"blog" | "gallery" | null>(null);
@@ -28,10 +28,10 @@ const Dashboard: React.FC = () => {
           Add Image to Gallery
         </button>
       </div>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         {activeSection === "blog" && <AddBlogForm />}
         {activeSection === "gallery" && <AddImageToGallery />}
-      </div>
+      </div> */}
     </div>
   );
 };
