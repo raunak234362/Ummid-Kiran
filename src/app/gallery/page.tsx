@@ -32,7 +32,7 @@ const Gallery = () => {
 
     setGalleryImages(galleryData);
     console.log(galleryImages);
-  }, []);
+  });
 
   const openLightbox = (img: { id: number; alt: string; src: string }) => {
     setSelectedImage(img);

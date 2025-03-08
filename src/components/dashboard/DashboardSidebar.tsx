@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Home, PlusCircle, Image } from "lucide-react"
+import { PlusCircle, Image } from "lucide-react"
 
 const DashboardSidebar = () => {
   return (
