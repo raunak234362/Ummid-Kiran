@@ -6,6 +6,7 @@ function About() {
     "Play Therapy",
     "Postural Therapy",
     "Art & Music Therapy",
+    "Special Education",
   ];
 
   const additionalPrograms = [
@@ -32,18 +33,13 @@ function About() {
             Kiran Jan Kalyaan Samiti, is a registered organization under PWD
             act, 12A and 80G.
           </p>
-          <ul className="space-y-3">
-            {[
-              "Comprehensive Rehabilitation Services",
-              "Professional Therapeutic Support",
-              "Cultural Integration Programs",
-            ].map((item, index) => (
-              <li key={index} className="flex items-center gap-2">
-                <div className="h-5 w-5 text-yellow-500" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
+          <ul className="space-y-2 text-gray-600">
+                <li>• Established Umeed Kiran Jan Kalyaan Samiti</li>
+                <li>• Society Registration 1705/14-15</li>
+                <li>• Registered under PWD act, 5745/2022-23, 12A and 80G</li>
+                <li>• Created comprehensive rehabilitation programs</li>
+                <li>• Developed innovative therapy solutions</li>
+              </ul>
         </div>
 
         <div className="space-y-6 animate-slide-in-right">

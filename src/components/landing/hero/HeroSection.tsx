@@ -9,8 +9,8 @@ function HeroSection() {
       <div className="grid gap-16 lg:grid-cols-2 lg:gap-8">
         <div className="space-y-8 animate-slide-in-left">
           <h1 className="space-y-4 text-5xl font-bold leading-tight md:text-6xl">
-            <span>Empowering </span>
-            <span className="block text-[#FFD700]">Special Lives</span>
+            <span>Empowering </span> <br />
+            <span className="text-[#FFD700]">Special Lives</span> <br />
             <span>With Special Care</span>
           </h1>
 
